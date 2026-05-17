@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="es-CO">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prédicteur IA – Dépôt</title>
+  <title>HackBotAI – Predicciones 1xBet Colombia</title>
+
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
   <style>
     .console-box {
       font-family: monospace;
@@ -16,6 +18,7 @@
       height: 250px;
       overflow-y: auto;
     }
+
     .loading-screen {
       font-family: monospace;
       background: #000;
@@ -31,123 +34,233 @@
       left: 0;
       width: 100%;
     }
-    .hidden-screen { display: none; }
+
+    .hidden-screen {
+      display: none;
+    }
   </style>
 </head>
+
 <body class="bg-gray-900 text-white font-sans">
+
   <div id="loading" class="loading-screen">
-    <p>Loading... Please wait while we configure your experience.</p>
+    <p>Iniciando HackBotAI... Espere un momento, parcero.</p>
   </div>
+
   <div id="mainContent" class="hidden-screen">
-    <header class="w-full bg-gray-800 p-4 flex justify-between items-center">
-      <h1 class="text-xl font-bold text-green-400">Mulenga Hack Signals</h1>
-      <nav class="space-x-4">
-        <a href="#how" class="hover:text-green-400">How it works</a>
-        <a href="#games" class="hover:text-green-400">Games</a>
-        <a href="#start" class="hover:text-green-400">To start</a>
+
+    <header class="w-full bg-gray-800 p-4 flex justify-between items-center border-b border-green-500">
+      <h1 class="text-xl font-bold text-green-400">
+        HackBotAI Colombia
+      </h1>
+
+      <nav class="space-x-4 hidden md:block">
+        <a href="#how" class="hover:text-green-400">Cómo funciona</a>
+        <a href="#games" class="hover:text-green-400">Juegos</a>
+        <a href="#start" class="hover:text-green-400">Comenzar</a>
       </nav>
     </header>
+
     <section class="min-h-screen flex flex-col items-center justify-center px-4 text-center">
+
       <h2 class="text-3xl md:text-5xl font-bold mb-6">
-        Win Real Money with AI Game Predictions
+        Gana dinero real con predicciones de IA para 1xBet
       </h2>
+
       <div class="mb-4 text-lg font-semibold text-yellow-300">
-        👋 Greetings and welcome to the official service of <span class="text-green-400">Mulenga</span> !
+        👋 ¡Bienvenido al canal oficial de
+        <span class="text-green-400">Alejandro</span>
+        para COLOMBIA!
       </div>
+
       <p class="max-w-xl mb-8 text-gray-300">
-       Join thousands of users winning with our smart AI on Aviator, Mines, and Penalty. 98% accuracy, real-time predictions, and instant cashouts!
+        HackBotAI utiliza algoritmos avanzados para analizar patrones en
+        Aviator, Mines y Penalty.
+        ¡98% de efectividad comprobada!
       </p>
-      <!-- ID input for connection -->
-      <input id="userId" type="text" placeholder="Enter your ID" class="bg-gray-700 text-white p-3 rounded-md mb-4" />
-      <button id="connectButton" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-xl text-lg transition">Connect account</button>
-      <!-- Success message -->
+
+      <input
+        id="userId"
+        type="text"
+        placeholder="Ingresa tu ID de 1xBet"
+        class="bg-gray-700 text-white p-3 rounded-md mb-4 text-center border-2 border-transparent focus:border-green-400 outline-none"
+      />
+
+      <button
+        id="connectButton"
+        class="bg-green-500 hover:bg-green-600 text-black font-bold py-3 px-10 rounded-xl text-lg transition transform hover:scale-105"
+      >
+        CONECTAR CUENTA
+      </button>
+
       <div id="connectionSuccess" class="hidden text-green-400 font-bold mt-6">
-        <p>Account ID : <span id="accountIdDisplay">1234567890</span> connected successfully !</p>
-        <p>Status : Active | 100% Prediction Accuracy | AI Algorithms Analyzed</p>
-        <button id="getSignalButton" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-xl text-lg transition mt-4">Get a signal</button>
+        <p>
+          ✅ ID:
+          <span id="accountIdDisplay">1234567890</span>
+          conectado!
+        </p>
+
+        <p>
+          Status: Servidor Colombia Activo | Algoritmo al 100%
+        </p>
+
+        <button
+          id="getSignalButton"
+          class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-xl text-lg transition mt-4 animate-bounce"
+        >
+          OBTENER SEÑAL AHORA
+        </button>
       </div>
-      <!-- Error message for deposit + PROMOCODE block -->
-      <div id="errorBox" class="hidden bg-red-600 p-6 rounded-xl max-w-md mx-auto mt-6">
-        <h2 class="text-xl font-bold mb-2">⚠️ Deposit not found</h2>
-        <p class="mb-4">It looks like your balance is empty. Please make a deposit of <strong>80 ZMW</strong> to unlock access to signals and start earning !</p>
-        <a href="https://reffpa.com/L?tag=d_5559130m_97c_&site=5559130&ad=97&r=registration"
-" target="_blank" id="depositButton" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-2 px-4 rounded-lg transition">
-          Deposit now on 1xbet
+
+      <div
+        id="errorBox"
+        class="hidden bg-red-600 p-6 rounded-xl max-w-md mx-auto mt-6 border-2 border-white"
+      >
+
+        <h2 class="text-xl font-bold mb-2">
+          ⚠️ SALDO INSUFICIENTE
+        </h2>
+
+        <p class="mb-4">
+          Para activar el HackBotAI, tu cuenta debe estar activa.
+          Realiza un depósito mínimo de
+          <strong>25,000 COP o más</strong>
+          para validar tu ID y desbloquear las señales VIP.
+        </p>
+
+        <a
+          href="https://reffpa.com/L?tag=d_5564480m_14205c__[]general[]_d200787_l271012_banner&site=5564480&ad=14205&r=registration"
+          target="_blank"
+          id="depositButton"
+          class="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 px-6 rounded-lg transition"
+        >
+          DEPOSITAR EN 1XBET COLOMBIA
         </a>
-        <!-- Промокод и напоминание -->
-        <div class="mt-6 bg-red-800 text-white p-4 rounded-lg font-bold text-center">
-           <div class="mb-1 text-lg">   Your promo code : <span class="bg-black p-1 rounded text-green-400">MUL3333</span></div>
-<div>Don't forget to register <span class="underline">uniquement</span> with this promo code to access all features!</div>
+
+        <div class="mt-6 bg-black text-white p-4 rounded-lg font-bold text-center">
+          <div class="mb-1 text-lg">
+            CÓDIGO PROMOCIONAL:
+            <span class="text-green-400">ALB667</span>
+          </div>
+
+          <div class="text-xs opacity-75 italic">
+            Usa este código al registrarte para duplicar tu primer depósito.
+          </div>
         </div>
+
       </div>
+
     </section>
-    <!-- Остальное без изменений -->
+
     <section class="bg-gray-800 py-12 px-6 text-center">
-      <h3 class="text-2xl font-bold text-green-400 mb-6">Today's Winners (ZMW)</h3>
-      <div class="grid md:grid-cols-2 gap-4 text-left max-w-4xl mx-auto text-sm text-green-300">
-        <p>👤 User ID: 1218473422 – 275328 ZMW</p>
-        <p>👤 User ID: 9912384741 – 221900 ZMW</p>
-        <p>👤 User ID: 1187339121 – 52001 ZMW</p>
-        <p>👤 User ID: 1187339121 – 150130 ZMW</p>
-        <p>👤 User ID: 4412900113 – 132850 ZMW</p>
-        <p>👤 User ID: 8283721091 – 128440 ZMW</p>
-        <p>👤 User ID: 7751937742 – 100705 ZMW</p>
-        <p>👤 User ID: 5554921811 – 98330 ZMW</p>
-        <p>👤 User ID: 1983238742 – 85000 ZMW</p>
-        <p>👤 User ID: 3377749301 – 79210 ZMW</p>
+
+      <h3 class="text-2xl font-bold text-green-400 mb-6">
+        Ganadores de hoy en Colombia
+      </h3>
+
+      <div class="grid md:grid-cols-2 gap-4 text-left max-w-4xl mx-auto text-sm text-green-300 font-mono">
+        <p>👤 ID: 4518**** – 1,230,000 COP</p>
+        <p>👤 ID: 9912**** – 850,000 COP</p>
+        <p>👤 ID: 3099**** – 1,512,000 COP</p>
+        <p>👤 ID: 1187**** – 640,000 COP</p>
+        <p>👤 ID: 4412**** – 2,285,000 COP</p>
+        <p>👤 ID: 8283**** – 920,000 COP</p>
       </div>
+
     </section>
+
     <section id="games" class="bg-gray-800 py-12 px-6 text-center">
-      <h3 class="text-2xl font-bold text-green-400 mb-6">Supported games</h3>
+
+      <h3 class="text-2xl font-bold text-green-400 mb-6">
+        Juegos con Hack Disponible
+      </h3>
+
       <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-        <div class="bg-gray-700 p-6 rounded-xl shadow-lg">
-          <h4 class="text-xl font-bold mb-2">🎮 Aviator</h4>
-          <p class="text-gray-300">Predict when to retire before the plane leaves! Our AI detects trends in real time.</p>
+
+        <div class="bg-gray-700 p-6 rounded-xl border border-gray-600">
+          <h4 class="text-xl font-bold mb-2">✈️ Aviator</h4>
+
+          <p class="text-gray-300 italic">
+            "Retiro garantizado antes del crash."
+          </p>
         </div>
-        <div class="bg-gray-700 p-6 rounded-xl shadow-lg">
+
+        <div class="bg-gray-700 p-6 rounded-xl border border-gray-600">
           <h4 class="text-xl font-bold mb-2">💣 Mines</h4>
-          <p class="text-gray-300">Avoid the bombs, collect the winnings. Our system finds low-risk paths to maximum profit.</p>
+
+          <p class="text-gray-300 italic">
+            "Mapeo de estrellas sin bombas."
+          </p>
         </div>
-        <div class="bg-gray-700 p-6 rounded-xl shadow-lg">
-          <h4 class="text-xl font-bold mb-2">🥅 Penalty</h4>
-          <p class="text-gray-300">Know where to shoot or dive. Beat the goalie with data-driven predictions.</p>
+
+        <div class="bg-gray-700 p-6 rounded-xl border border-gray-600">
+          <h4 class="text-xl font-bold mb-2">⚽ Penalty</h4>
+
+          <p class="text-gray-300 italic">
+            "Goles directos al ángulo."
+          </p>
         </div>
+
       </div>
+
     </section>
-    <section id="how" class="bg-gray-900 py-12 px-6 text-center">
-      <h3 class="text-2xl font-bold text-green-400 mb-6">Comment ça marche</h3>
-      <div class="max-w-3xl mx-auto space-y-4 text-gray-300">
-        <p>📡 Our AI analyzes live data and game history 24/7.</p>
-        <p>💡 It identifies patterns that enable consistent gains.</p>
-        <p>📲 You receive reliable signals in real time — right to your device.</p>
-      </div>
-    </section>
-    <section class="bg-black py-12 px-6 text-center">
-      <h3 class="text-xl font-bold text-green-400 mb-4">[Console – Monitoring Log]</h3>
-      <div class="console-box max-w-3xl mx-auto text-left" id="console">
-        <p>[INFO] Prediction service active ✅</p>
-      </div>
-    </section>
-    <footer class="text-center text-gray-500 text-sm py-6">
-      © 2025 AI Predictor. Not affiliated with 1xbet. Use responsibly.
+
+    <footer class="text-center text-gray-500 text-sm py-8 bg-black">
+      <p>© 2026 HackBotAI. Todos los derechos reservados.</p>
+
+      <p class="text-xs mt-2">
+        Juega con responsabilidad. Solo para mayores de 18 años.
+      </p>
     </footer>
+
   </div>
+
   <script>
+
     setTimeout(() => {
       document.getElementById("loading").classList.add("hidden-screen");
       document.getElementById("mainContent").classList.remove("hidden-screen");
-    }, 3000);
+    }, 2500);
+
     document.getElementById("connectButton").addEventListener("click", () => {
+
       const userId = document.getElementById("userId").value;
-      if (userId) {
-        document.getElementById("accountIdDisplay").innerText = userId;
-        document.getElementById("connectionSuccess").classList.remove("hidden");
-        document.getElementById("errorBox").classList.add("hidden");
+
+      if (userId.length > 4) {
+
+        document.getElementById("connectButton").innerText = "CONECTANDO...";
+
+        setTimeout(() => {
+
+          document.getElementById("connectButton").classList.add("hidden");
+          document.getElementById("userId").classList.add("hidden");
+
+          document.getElementById("accountIdDisplay").innerText = userId;
+
+          document.getElementById("connectionSuccess").classList.remove("hidden");
+
+        }, 1500);
+
+      } else {
+
+        alert("Por favor ingresa un ID válido de 1xBet");
+
       }
+
     });
+
     document.getElementById("getSignalButton").addEventListener("click", () => {
+
       document.getElementById("errorBox").classList.remove("hidden");
+
+      window.scrollTo({
+        top: document.getElementById("errorBox").offsetTop - 50,
+        behavior: 'smooth'
+      });
+
     });
+
   </script>
+
 </body>
 </html>
